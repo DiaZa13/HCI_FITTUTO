@@ -1,0 +1,16 @@
+
+@include media-breakpoint-up(md){
+  .signUp-container{
+    height: 100vw;
+    width: 100vw;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: [first] auto [middle] calc(100%/1.61803) [end];
+  }
+
+}
+
+
+.signUp-img{
+  grid-column-start: middle;
+}
