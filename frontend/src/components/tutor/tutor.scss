@@ -1,3 +1,39 @@
 .tutor-review{
   width: 24px;
 }
+
+.tutor-item-container{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #fff;
+  &:hover{
+    box-shadow: 0 2px 7px $blue-gray-7;
+  }
+}
+
+.tutor-user-img{
+  position: relative;
+  width: 400px;
+  &:hover{
+    &+.tutor-cover{
+      display: block;
+    }
+  }
+}
+
+.image-shadow{
+  width: 100%;
+  position: relative;
+  background-color: #333;
+  box-shadow: 0 8px 24px #b2b2b280;
+}
+
+.tutor-cover{
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 225px;
+  top: 0;
+  background-color: #2632387d;
+}

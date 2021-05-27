@@ -22,7 +22,10 @@ export default function Dashboard() {
           <Route path={`${path}/help`}>
             <Home/>
           </Route>
-          <Route exact path={path} children={<TutorItem/>}/>
+          <Route path={`${path}/tutor`}>
+            <TutorItem/>
+          </Route>
+          <Route exact path={path} children={<Home/>}/>
         </Switch>
       </div>
     </div>

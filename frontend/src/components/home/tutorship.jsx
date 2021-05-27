@@ -13,16 +13,20 @@ export default function Tutorship() {
       <div className="tutorship-container ">
         {
           data.map((item)=>{
-            return(
-              <TutorshipItem
-                key = {item.id}
-                title={item.title}
-                description={item.description}
-                redirect={item.redirect}
-                position={item.position}
-                img={item.img}
-              />
-            )
+            var index = data.indexOf(item);
+            if(index < 3 ){
+              return(
+                <TutorshipItem
+                  key = {item.id}
+                  title={item.title}
+                  description={item.description}
+                  redirect={item.redirect}
+                  position={item.position}
+                  img={item.img}
+                />
+              )
+            }
+
           })
         }
       </div>

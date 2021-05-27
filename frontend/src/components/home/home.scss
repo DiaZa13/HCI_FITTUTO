@@ -34,6 +34,7 @@
   letter-spacing: 0.2em;
   padding-bottom: 4px;
   &:hover{
+    text-decoration: none;
     color: $amber-7;
     font-weight: 600;
   }
