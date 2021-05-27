@@ -47,8 +47,8 @@
 
 .product-font{
   line-height: 20px;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
   padding-top: 5px;
   cursor: pointer;
 }
@@ -82,14 +82,19 @@ li ~ li{
 }
 
 .services{
-  margin-left: 24px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-left: 18px;
+  text-decoration: none;
   height: fit-content;
   cursor: pointer;
-  color: #4D4940;
+  color: $blue-gray-8!important;
   &:hover{
-    color: #FFC100;
+    color: #FFC100!important;
   }
 }
+
 
 .collapseProduct{
   width: 56%;
@@ -233,7 +238,7 @@ ul, li ~ li{
   color: #423f3f;
   transition: color 350ms ease;
   &:hover{
-    color: #1a73e8;
+    color: #FFC100;
   }
 }
 
@@ -277,8 +282,6 @@ div[aria-expanded="true"]{
   background: transparent;
   outline: none;
   border: none;
-  font-size: 20px;
-  font-weight: 500;
 }
 
 .btn{
@@ -310,4 +313,11 @@ div[aria-expanded="true"]{
   width: 153px;
   position: absolute;
   top: 5px;
+}
+
+.logo_animation{
+  transition: all 1s ease;
+  &:hover{
+    transform: scale(1.04);
+  }
 }

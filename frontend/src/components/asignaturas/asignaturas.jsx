@@ -2,7 +2,7 @@ import React from 'react';
 import TutorshipItem from './tutorshipItem';
 import { tutorship_data } from '../utils/tutorship_data';
 
-export default function Tutorship(props) {
+export default function Asignaturas() {
   const data = tutorship_data();
   return (
     <div>
@@ -13,8 +13,6 @@ export default function Tutorship(props) {
       <div className="tutorship-container ">
         {
           data.map((item)=>{
-            var index = data.indexOf(item);
-            if(index < 3 ){
               return(
                 <TutorshipItem
                   key = {item.id}
@@ -25,8 +23,6 @@ export default function Tutorship(props) {
                   img={item.img}
                 />
               )
-            }
-
           })
         }
       </div>

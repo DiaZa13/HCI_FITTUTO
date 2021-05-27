@@ -22,6 +22,9 @@ export default function Dashboard() {
           <Route path={`${path}/help`}>
             <Home/>
           </Route>
+          <Route path={`${path}/assigment`}>
+            <TutorItem/>
+          </Route>
           <Route path={`${path}/tutor`}>
             <TutorItem/>
           </Route>

@@ -3,6 +3,7 @@ import Services from './services';
 import Configure from './configure';
 import logo from '../../assets/logo.svg';
 import { Link, useRouteMatch, useParams } from 'react-router-dom';
+import history from '../utils/history';
 
 export default function NavBar() {
   // const { url } = useRouteMatch();
@@ -49,7 +50,7 @@ export default function NavBar() {
             </button>
             <div className="d-flex flex-grow-1 justify-content-between align-items-center">
               {/* LOGO */}
-              <div aria-label="Google store logo">
+              <Link aria-label="Google store logo" className="logo_animation" to={'/home'}>
                 <div className="logo-bg-large">
                   <svg xmlns="http://www.w3.org/2000/svg" width="150" height="42.00" viewBox="0 0 359.477 100.668">
                     <g id="surface1" transform="translate(-6.806 -6.537)">
@@ -178,7 +179,7 @@ export default function NavBar() {
                     </g>
                   </svg>
                 </div>
-              </div>
+              </Link>
               <div className="collapse navbar-collapse align-items-center" style={{ height: 'inherit' }}>
                 <Services />
               </div>

@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <div>
       <Carousel/>
-      <Tutorship/>
+      <Tutorship
+      limit={3}
+      />
       <Quote/>
       <LeftTutors/>
     </div>
