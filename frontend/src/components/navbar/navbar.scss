@@ -259,10 +259,11 @@ div[aria-expanded="true"]{
 .navbar-container{
   width: 100%;
   backface-visibility: hidden;
-  height: 56px;
+  height: 70px;
   position: relative;
   z-index: 91;
-  transition: box-shadow 250ms;
+  transition:  all 250ms ease-out;
+
 }
 
 .fixed{

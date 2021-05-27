@@ -10,10 +10,10 @@
   display: grid;
   --minimumColumnWidth: 180px;
   overflow-y: hidden;
-  grid-template-rows: 1fr;
   padding: 0 15px;
   grid-gap: 30px;
   grid-template-columns: [first] 1fr [middle] 1fr [middle_1] 1fr [end];
+  grid-template-rows: auto;
   max-width: 1300px;
   margin: 40px auto;
 }

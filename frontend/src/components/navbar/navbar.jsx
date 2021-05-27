@@ -31,7 +31,7 @@ export default function NavBar() {
   return (
     <div>
       {/* NavBar menu */}
-      <div className={'navbar-container bg-light navbar-fixed-top'}>
+      <div className={`navbar-container bg-white ${fixed ? 'fixed' : ''}`}>
         <div style={{ height: '70px' }}>
           <nav className="navbar navbar-expand-lg navbar-light text-light">
             <button
@@ -177,9 +177,6 @@ export default function NavBar() {
                       </g>
                     </g>
                   </svg>
-
-
-
                 </div>
               </div>
               <div className="collapse navbar-collapse align-items-center" style={{ height: 'inherit' }}>
