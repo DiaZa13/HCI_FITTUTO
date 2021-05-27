@@ -1,7 +1,7 @@
 import React from 'react';
+import { createBrowserHistory as history } from 'history';
+import { useRouteMatch, Link } from 'react-router-dom';
 import user from '../../assets/tutor.jpg';
-import history from '../utils/history';
-import { useRouteMatch } from 'react-router-dom';
 
 function Configure() {
 

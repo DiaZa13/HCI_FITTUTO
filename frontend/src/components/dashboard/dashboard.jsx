@@ -1,23 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Switch,
   Route,
   useRouteMatch,
-  useParams
-} from "react-router-dom";
+  useParams,
+} from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import Home from '../home/home';
 import TutorItem from '../tutor/tutorItem';
+import Halp from '../halp/halp'
 
 export default function Dashboard() {
-  let { user } = useParams();
-  let {path} = useRouteMatch();
+  const { user } = useParams();
+  const { path } = useRouteMatch();
 
-
-  return(
-    <div id={'main-container'}>
+  return (
+    <div id="main-container">
       <div>
-        <NavBar/>
+        <NavBar />
         <Switch>
           <Route path={`${path}/help`}>
             <Home/>
@@ -26,11 +26,5 @@ export default function Dashboard() {
         </Switch>
       </div>
     </div>
-
   );
-
 }
-
-
-
-
