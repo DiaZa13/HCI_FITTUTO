@@ -262,7 +262,7 @@ div[aria-expanded="true"]{
   height: 70px;
   position: relative;
   z-index: 91;
-  transition:  all 250ms ease-out;
+  transition:  all 250ms ease-in-out 1s;
 
 }
 
@@ -277,6 +277,8 @@ div[aria-expanded="true"]{
   background: transparent;
   outline: none;
   border: none;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .btn{

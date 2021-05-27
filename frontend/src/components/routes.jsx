@@ -8,8 +8,8 @@ export default function Routes() {
   return(
     <Router>
       <Switch>
-        <Route exact path="/" component={Dashboard}/>
         <Route path="/signUp" component={SignUp}/>
+        <Route exact path="/" component={Dashboard}/>
       </Switch>
     </Router>
   );

@@ -8,15 +8,15 @@ export default function Services() {
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="nav-item product-font ml-20">
           <div  className="noDecorations">
-            <button className="nav-link button" type="button">
-              Recomendación de tutor
+            <button className="services button" type="button">
+              Tutores
             </button>
           </div>
         </li>
         <li className="nav-item product-font ml-20">
           <div  className="noDecorations">
-            <button className="nav-link button" type="button">
-              Sesiones programadas
+            <button className="services button" type="button">
+              Asignaturas
             </button>
           </div>
         </li>

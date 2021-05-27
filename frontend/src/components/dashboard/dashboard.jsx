@@ -6,8 +6,8 @@ import {
   useParams
 } from "react-router-dom";
 import NavBar from '../navbar/navbar';
-import Carousel from '../home/carousel';
 import Home from '../home/home';
+import TutorItem from '../tutor/tutorItem';
 
 export default function Dashboard() {
   let { user } = useParams();
@@ -19,9 +19,10 @@ export default function Dashboard() {
       <div>
         <NavBar/>
         <Switch>
-          <Route  path={`${path}`}>
+          <Route path={`${path}/help`}>
             <Home/>
           </Route>
+          <Route exact path={path} children={<TutorItem/>}/>
         </Switch>
       </div>
     </div>

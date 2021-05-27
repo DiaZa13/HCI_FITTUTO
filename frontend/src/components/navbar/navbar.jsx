@@ -51,7 +51,7 @@ export default function NavBar() {
               {/* LOGO */}
               <div aria-label="Google store logo">
                 <div className="logo-bg-large">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="140" height="39.21" viewBox="0 0 359.477 100.668">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="150" height="42.00" viewBox="0 0 359.477 100.668">
                     <g id="surface1" transform="translate(-6.806 -6.537)">
                       <path id="Path_109" data-name="Path 109" d="M93.449,51.809c-2.062-12.816,15.8-19.738,14.156-29.27-1.906-11-28.648-18.8-51.265-15.047C49.555,8.617,24,12.863,12.4,35.934,1.2,58.2,7.309,89.434,26.32,101.73c30.516,19.731,79.3-19.015,77.039-34.867-.847-5.937-8.605-6.949-9.91-15.055" fill="#caddff"/>
                       <path id="Path_110" data-name="Path 110" d="M99.547,89.238a6.067,6.067,0,0,1,0-5.785l-.734-.875-20.027.656.691,6.348,19.387.223.684-.566" fill="#fff"/>

@@ -1,7 +1,17 @@
 import React from 'react';
 import user from '../../assets/tutor.jpg';
+import history from '../utils/history';
+import { useRouteMatch } from 'react-router-dom';
 
 function Configure() {
+
+  let { url } = useRouteMatch();
+
+  const handleClick = () =>{
+    history.push(`${url}/help`);
+    history.go();
+  }
+
   return (
     <div className="d-flex align-items-center">
       {/* Search */}
@@ -11,7 +21,7 @@ function Configure() {
         </span>
       </div>
       {/* Help */}
-      <div className="services " style={{ height: '24px' }}>
+      <div className="services " style={{ height: '24px' }} onClick={handleClick}>
         <span className="material-icons">
           help
         </span>
