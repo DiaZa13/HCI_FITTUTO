@@ -8,6 +8,9 @@ path('appointment/<str:pk>/',views.appointmentDetails, name='appointment-details
 path('create/',views.appointmentCreate, name='appointment-create'),
 path('update/<str:pk>/',views.appointmentUpdate, name='appointment-update'),
 path('delete/<str:pk>/',views.appointmentDelete, name='appointment-delete'),
+path('appointmentsByUserId/<str:pk>/',views.appointmentsByUserId, name='appointments-by-user-id'),
+
+
 
 
 ]

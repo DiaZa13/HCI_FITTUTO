@@ -7,6 +7,8 @@ from rest_framework.decorators import api_view
 from .models import Appointment
 # Create your views here.
 
+from django.db import connection
+
 
 @api_view(['GET'])
 def appointmentsList(request):
@@ -46,3 +48,18 @@ def appointmentDelete(request,pk):
 	appointment= Appointment.objects.get(id_appointment=pk)
 	appointment.delete()
 	return Response("Appointment was deleted")
+
+
+
+
+@api_view(['GET'])
+def appointmentsByUserId(reqeust,pk):
+	querry='select id_appointment, date, start_time, end_time, cc.name, tt.name,tt.last_name from appointment_appointment aa join course_course cc on cc.id_course = aa.id_course_id join tutor_tutor tt on tt.id_tutor = aa.id_tutor_id where id_user_id ='+pk
+	cursor = connection.cursor()
+	cursor.execute(querry)
+	appointments = cursor.fetchall()
+	valores = []
+	for appointment in appointments:
+		element_dict = {"id_appointment": appointment[0] , "date" :appointment[1],"start_time":appointment[2],"end_time":appointment[3],"course_name":appointment[4],"tutor_name":appointment[5],"tutor_last_name":appointment[6]}
+		valores.append(element_dict)
+	return Response (valores)
