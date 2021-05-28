@@ -8,7 +8,8 @@ import {
 import NavBar from '../navbar/navbar';
 import Home from '../home/home';
 import TutorItem from '../tutor/tutorItem';
-import Halp from '../halp/halp'
+import Exercises from '../Exercises/Exercises';
+import Halp from '../halp/halp';
 
 export default function Dashboard() {
   const { user } = useParams();
@@ -27,6 +28,9 @@ export default function Dashboard() {
           </Route>
           <Route path={`${path}/tutor`}>
             <TutorItem/>
+          </Route>
+          <Route path={`${path}/exercises`}>
+            <Exercises/>
           </Route>
           <Route exact path={path} children={<Home/>}/>
         </Switch>

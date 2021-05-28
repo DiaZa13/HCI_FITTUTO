@@ -36,6 +36,14 @@ export default function Services() {
             Sesiones
           </Link>
         </li>
+        <li className={"nav-item product-font ml-20"}>
+          <Link
+            to={`${url}/Exercises`}
+            className="Exercises"
+            type="button">
+            Exercises
+          </Link>
+        </li>
       </ul>
     </div>
 
