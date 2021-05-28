@@ -9,5 +9,15 @@ path('create/',views.userCreate, name='user-create'),
 path('update/<str:pk>/',views.userUpdate, name='user-update'),
 path('delete/<str:pk>/',views.userDelete, name='user-delete'),
 
+path('logout/',views.userLogout, name='user-logout'),
+
+path('login/',views.userLogin,name='user-login'),
+path('register/',views.userRegister,name='user-register'),
+
+
+
+
+
+
 
 ]

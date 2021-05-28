@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 
 class User(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	birth_date = models.DateTimeField(auto_now_add=True, blank=True)
+	birth_date = models.DateField(default='1990-01-01' )
 	phonenumber = models.IntegerField(default=12341234)

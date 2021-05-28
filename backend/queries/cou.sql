@@ -58,7 +58,7 @@ union
 (select * from (select current_date +5 as day6 ) day6 cross join (select * from tutor_hour) sub6)
 union
 (select * from (select current_date +6 as day7 ) day7 cross join (select * from tutor_hour) sub7)
-order by date, start_date
+order by date, start_time
 
 );
 ----get day of week
