@@ -7,6 +7,7 @@ import References from '../References/References';
 
 export default function tutorProfile() {
   return (
+    <div className="genereal">
     <div className="tutor-container p-5 bg-primary">
       <img src={img} alt="Tutor" className="tutor-img"/>
       <div className="tutor-text bg-white">
@@ -23,8 +24,9 @@ export default function tutorProfile() {
         los estudiantes fuera del salón de clases, de hecho, en la mayoría de los centros educativos, la labor que yo
         desempeño es incluida dentro de su oferta de actividades extracurriculares.
         </p>
-      </div>
+      </div>   
     </div>
-
+    <h1>Reseñas de Juanito Gonzales</h1>
+    </div>
   );
 }
