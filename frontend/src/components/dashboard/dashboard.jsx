@@ -12,6 +12,7 @@ import Halp from '../halp/halp'
 import Tutor from '../tutor/tutor';
 import Asignaturas from '../asignaturas/asignaturas';
 import Exercises from '../Exercises/Exercises';
+import TutorProfile from '../TutorProfile/TutorProfile';
 
 export default function Dashboard() {
   const { user } = useParams();
@@ -33,6 +34,9 @@ export default function Dashboard() {
           </Route>
           <Route path={`${path}/exercises`}>
             <Exercises/>
+          </Route>
+          <Route path={`${path}/tutorprofile`}>
+            <TutorProfile/>
           </Route>
           <Route exact path={path} children={<Home/>}/>
         </Switch>
