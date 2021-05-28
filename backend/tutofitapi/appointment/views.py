@@ -28,9 +28,9 @@ def appointmentCreate(request):
 	serializer = AppointmentSerializer(data=request.data)
 	if serializer.is_valid():
 		serializer.save()
-		print("APPOINTMENT SUCCESFULLY ADDED ")
+		
 	else :
-		print("APPOINTMENT WAS NOT ADDED ")
+		
 
 
 	return Response(serializer.data)
