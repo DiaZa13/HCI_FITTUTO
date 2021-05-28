@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import img from '../../assets/teachers (2).png';
-import img2 from '../../assets/reseña.png';
+import img2 from '../../assets/reseña.jpg';
 import './TutorProfile.scss';
 import ModalAgendar from '../tutor/modal_agendar';
 
@@ -19,7 +19,8 @@ export default function tutorProfile() {
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
-          <button className="btn-reseña" ><img src={img2} alt="reseña-img" className="reseña-img"/></button>
+          <button className="btn-reseña" >
+          <span className="material-icons create" style={{fontSize:"30px", color:"#263238"}}>create</span></button>
         </div>
         <div className="d-flex my-1">
               <h5>Calificación:</h5>
