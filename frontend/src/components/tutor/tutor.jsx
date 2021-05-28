@@ -1,6 +1,7 @@
 import React from 'react';
 import { tutorship_data } from '../utils/tutorship_data';
 import TutorItem from './tutorItem';
+import TutorProfile from '../TutorProfile/TutorProfile';
 
 export default function Tutor(props) {
   const data = tutorship_data();

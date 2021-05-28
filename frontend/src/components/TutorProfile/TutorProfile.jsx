@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import img from '../../assets/teachers (2).png';
-import img1 from '../../assets/calendario.jpg';
 import img2 from '../../assets/reseña.png';
 import './TutorProfile.scss';
-import References from '../References/References';
+import ModalAgendar from '../tutor/modal_agendar';
 
 export default function tutorProfile() {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div className="genereal">
     <div className="tutor-container p-5 bg-primary">
@@ -13,10 +13,22 @@ export default function tutorProfile() {
       <div className="tutor-text bg-white">
         <div className="elements">
           <h2>Juanito Gonzales</h2>
-          <button className="btn-calendario"><img src={img1} alt="calendar-img" className="calendar-img"/> </button>
-          <button className="btn-reseña" href='../References/References'><img src={img2} alt="reseña-img" className="reseña-img"/></button>
-          
+          <button className="btn-calendario" onClick={() => setModalShow(true)}>
+            <span className="material-icons text-primary" style={{fontSize:"30px"}}>event_available</span></button>
+            <ModalAgendar
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+          <button className="btn-reseña" ><img src={img2} alt="reseña-img" className="reseña-img"/></button>
         </div>
+        <div className="d-flex my-1">
+              <h6>Calificación:</h6>
+              <span className="material-icons text-secondary tutor-review">star_rate</span>
+              <span className="material-icons text-secondary tutor-review">star_rate</span>
+              <span className="material-icons text-secondary tutor-review">star_rate</span>
+              <span className="material-icons text-secondary tutor-review">star_rate</span>
+              <span className="material-icons text-secondary tutor-review">star_outline</span>
+            </div>
         <span className="divider"/>
         <h5>Cursos: Matemática, Ingles, Comunicación</h5>
         <p className="mt-5">
