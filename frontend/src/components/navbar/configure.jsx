@@ -1,34 +1,22 @@
 import React from 'react';
 import { createBrowserHistory as history } from 'history';
 import { useRouteMatch, Link } from 'react-router-dom';
-import user from '../../assets/tutor.jpg';
+import user from '../../assets/teachers.png';
 
 function Configure() {
-
   let { url } = useRouteMatch();
-
-  const handleClick = () =>{
-    history.push(`${url}/help`);
-    history.go();
-  }
 
   return (
     <div className="d-flex align-items-center">
-      {/* Search */}
-      <div className="services" style={{ height: '24px' }}>
-        <span className="material-icons">
-          search
-        </span>
-      </div>
       {/* Help */}
-      <div className="services " style={{ height: '24px' }} onClick={handleClick}>
-        <span className="material-icons">
+      <Link to={`${url}/help`} className="services" style={{ height: '40px' }}>
+        <span className="material-icons icon-size">
           help
         </span>
-      </div>
+      </Link>
       {/* User image profile */}
       <div className="services mt-1">
-        <img src={user} alt="User profile" width="32px" height="32px" className="rounded-circle" />
+        <img src={user} alt="User profile" width="45px" height="45px" className="rounded-circle" />
       </div>
     </div>
 

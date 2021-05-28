@@ -49,7 +49,7 @@ export default function LogInForm() {
   const onSubmit = (data) => console.log(data);
 
   return (
-      <form onSubmit={handleSubmit(onSubmit)} className="form-container mt-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="form-container mt-3">
         {/* Username */}
         <div className="position-relative mt-4_5">
           <input
@@ -61,7 +61,7 @@ export default function LogInForm() {
           />
           <label className={'label'}>Usuario</label>
           <button className="input-icon">
-           <I_visibility/>
+           <span className="material-icons">account_circle</span>
           </button>
           <small className="text-danger text-small d-block mb-2">
             {/* <Exclamation_icon/> */}
@@ -87,7 +87,7 @@ export default function LogInForm() {
           </small>
         </div>
         {/* REGISTER BUTTON */}
-        <button onSubmit={onSubmit} className="btn btn-secondary mt-4_5 w-100 font">CREAR CUENTA</button>
+        <button onSubmit={onSubmit} className="btn btn-secondary mt-4_5 w-100"><h5 className="m-0">INICIAR SESÓN</h5></button>
       </form>
   );
 }

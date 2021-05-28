@@ -4,9 +4,12 @@
 @import '../components/utils/utils';
 @import '../components/halp/halp';
 @import "../components/signUp/signUp";
+@import "../components/logIn/logIn";
 @import "../components/navbar/navbar";
 @import "../components/home/home.scss";
 @import "../components/tutor/tutor";
+@import "../components/init_dashboard/navDash.scss";
+
 
 body{
   background-color: #f5f5f5;
