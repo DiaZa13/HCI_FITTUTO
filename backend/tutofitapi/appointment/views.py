@@ -28,8 +28,7 @@ def appointmentCreate(request):
 	serializer = AppointmentSerializer(data=request.data)
 	if serializer.is_valid():
 		serializer.save()
-		
-	else :
+	
 		
 
 
