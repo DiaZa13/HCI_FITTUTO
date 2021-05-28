@@ -26,7 +26,7 @@ class App extends Component {
       Curso: null,
       Commentary: null,
       formErrors: {
-        FullName: "",
+        fullName: "",
         curso: "",
         commentary: "",
       }
@@ -54,17 +54,17 @@ class App extends Component {
     let formErrors = { ...this.state.formErrors };
 
     switch (name) {
-      case "Date":
-        formErrors.FullName =
-          value.length < 5 ? "minimum 3 characaters required" : "";
+      case "FullName":
+        formErrors.fullName =
+          value.length < 5 ? "minimum 5 characaters required" : "";
         break;
       case "Curso":
         formErrors.curso = 
-          value.length < 3 ? "minimum 3 characaters required" : "";
+          value.length < 5 ? "minimum 5 characaters required" : "";
         break;
       case "Commentary":
-        formErrors.Commentary =
-          value.length < 10 ? "minimum 3 characaters required" : "";
+        formErrors.commentary =
+          value.length < 10 ? "minimum 10 characaters required" : "";
         break;
       default:
         break;
@@ -99,15 +99,15 @@ class App extends Component {
             <div className="email">
               <label htmlFor="FullName">Ingrese Nombre Completo</label>
               <input
-                className={formErrors.FullName.length > 0 ? "error" : null}
+                className={formErrors.fullName.length > 0 ? "error" : null}
                 placeholder="Nombre Completo"
                 type="text"
-                name="Name"
+                name="FullName"
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.FullName.length > 0 && (
-                <span className="errorMessage">{formErrors.FullName}</span>
+              {formErrors.fullName.length > 0 && (
+                <span className="errorMessage">{formErrors.fullName}</span>
               )}
             </div>
             <div className="email">
@@ -116,7 +116,7 @@ class App extends Component {
                 className={formErrors.curso.length > 0 ? "error" : null}
                 placeholder="Ingrese el curso"
                 type="text"
-                name="curso"
+                name="Curso"
                 noValidate
                 onChange={this.handleChange}
               />
@@ -138,8 +138,8 @@ class App extends Component {
                 <span className="errorMessage">{formErrors.commentary}</span>
               )}
             </div>
-<div className="YourOpinion">
-              <button type="submit">Guardar cambios</button>
+            <div className="YourOpinion">
+              <button className="btn" type="submit">Guardar cambios</button>
             </div>
           </form>
         </div>

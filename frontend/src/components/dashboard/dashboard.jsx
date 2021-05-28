@@ -13,6 +13,7 @@ import Tutor from '../tutor/tutor';
 import Asignaturas from '../asignaturas/asignaturas';
 import Exercises from '../Exercises/Exercises';
 import TutorProfile from '../TutorProfile/TutorProfile';
+import References from '../References/References';
 
 export default function Dashboard() {
   const { user } = useParams();

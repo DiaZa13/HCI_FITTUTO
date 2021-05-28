@@ -3,6 +3,8 @@ import img from '../../assets/teachers (2).png';
 import img1 from '../../assets/calendario.jpg';
 import img2 from '../../assets/reseña.png';
 import './TutorProfile.scss';
+import References from '../References/References';
+
 export default function tutorProfile() {
   return (
     <div className="tutor-container p-5 bg-primary">
@@ -11,7 +13,7 @@ export default function tutorProfile() {
         <div className="elements">
           <h2>Juanito Gonzales</h2>
           <button className="btn-calendario"><img src={img1} alt="calendar-img" className="calendar-img"/> </button>
-          <button className="btn-reseña"><img src={img2} alt="reseña-img" className="reseña-img"/></button>
+          <button className="btn-reseña" href='../References/References'><img src={img2} alt="reseña-img" className="reseña-img"/></button>
           
         </div>
         <span className="divider"/>
