@@ -15,7 +15,6 @@ from .models import Course , Teaches
 def coursesList(request):
 	courses= Course.objects.all()
 	serializers= CourseSerializer(courses,many=True)
-	print(serializers.data)
 	return Response(serializers.data)
 
 @api_view(['GET'])
@@ -45,7 +44,6 @@ def courseCreate(request):
 def teachesList(request):
 	courses= Teaches.objects.all()
 	serializers= TeachesSerializer(courses,many=True)
-	print(serializers.data)
 	return Response(serializers.data)
 
 

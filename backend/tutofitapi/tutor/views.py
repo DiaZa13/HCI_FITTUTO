@@ -15,7 +15,6 @@ def tutorDetails(request,pk):
 	cursor = connection.cursor()
 	cursor.execute(querry)
 	tutor = cursor.fetchall()
-	print(tutor)
 	element_dict = {"id_tutor": tutor[0][0] , "name" :tutor[0][1],"last_name":tutor[0][2],"date_of_birth":tutor[0][3],"phone_number":tutor[0][4],"avg_score":tutor[0][5] ,"rate_per_hour":tutor[0][6]}
 	return Response(element_dict)
 

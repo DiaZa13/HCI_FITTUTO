@@ -51,17 +51,12 @@ def userDelete(request,pk):
 
 def userLogout(request):
     logout(request)
-    print(" LOGGED OUT ")
     return HttpResponseRedirect("../login/")
 
 @api_view(['POST'])
 def userLogin(request):
 	username =request.data['username']
 	password = request.data['password']
-	
-	print("username: "+ username)
-	print("password: "+ password)
-
 	user = authenticate(username=username, password=password)
 	if user is not None:
 		login(request, user)
