@@ -7,6 +7,7 @@ class Course(models.Model):
 	id_course = models.AutoField(primary_key=True)
 	name= models.CharField(max_length=50)
 	description = models.CharField(max_length=800)
+	external_link = models.TextField(default="wikipedia.com")
 
 
 class Teaches(models.Model):

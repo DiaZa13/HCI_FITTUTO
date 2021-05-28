@@ -4,7 +4,7 @@ from .serializers import CourseSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-
+from django.db import connection
 from .models import Course
 # Create your views here.
 
@@ -24,6 +24,14 @@ def courseDetails(request,pk):
 	serializers= CourseSerializer(courses,many=False)
 	return Response(serializers.data)
 
+@api_view(['GET'])
+def coursesByTutorId(request,pk):
+	querry='select name from course_course cc join course_teaches ct on ct.id_course_id = cc.id_course where id_tutor_id ='+pk
+	cursor = connection.cursor()
+	cursor.execute(querry)
+	course = cursor.fetchall()
+	element_dict = {"course": course[0][0]}
+	return Response(element_dict)
 
 @api_view(['POST'])
 def courseCreate(request):
