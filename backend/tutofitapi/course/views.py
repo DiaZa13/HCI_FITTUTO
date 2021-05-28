@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.db import connection
-from .serializers import CourseSerializer
+from .serializers import CourseSerializer , TeachesSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.db import connection
-from .models import Course
+from .models import Course , Teaches
 # Create your views here.
 
 
@@ -40,6 +40,23 @@ def courseCreate(request):
 		serializer.save()
 
 	return Response(serializer.data)
+
+@api_view(['GET'])
+def teachesList(request):
+	courses= Teaches.objects.all()
+	serializers= TeachesSerializer(courses,many=True)
+	print(serializers.data)
+	return Response(serializers.data)
+
+
+@api_view(['POST'])
+def teachesCreate(request):
+	serializer = TeachesSerializer(data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
+
 
 @api_view(['POST'])
 def courseUpdate(request,pk):

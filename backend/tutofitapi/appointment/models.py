@@ -8,8 +8,9 @@ from users.models import User
 
 class Appointment(models.Model):
 	id_appointment = models.AutoField(primary_key=True)
-	start_date = models.DateTimeField(default=datetime.date.today)
-	end_date = models.DateTimeField(default=datetime.date.today)
+	date = models.DateField(default='2021-05-28' )
+	start_time = models.TimeField(default='10:00:00')
+	end_time = models.TimeField(default='11:00:00')
 	id_tutor = models.ForeignKey(Tutor, on_delete=models.PROTECT, related_name="appointments")
 	id_course = models.ForeignKey(Course, on_delete=models.PROTECT, related_name="appointments")
 	id_user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="appointments")

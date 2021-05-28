@@ -9,6 +9,8 @@ path('create/',views.courseCreate, name='course-create'),
 path('update/<str:pk>/',views.courseUpdate, name='course-update'),
 path('delete/<str:pk>/',views.courseDelete, name='course-delete'),
 path('coursesByTutorId/<str:pk>/',views.coursesByTutorId, name='course-by-tutur-id'),
+path('teaches/Create/',views.teachesCreate, name='teaches-create'),
+path('teaches/',views.teachesList, name='teaches-list'),
 
 
 

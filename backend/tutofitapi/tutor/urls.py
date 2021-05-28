@@ -9,4 +9,10 @@ urlpatterns = [
 	path('delete/<str:pk>/',views.tutorDelete, name='tutor-delete'),
 	path('tutorsByCourseId/<str:pk>/',views.tutorsListByCourseId, name='tutors-by-course'),
 
+
+	path('availabilities/',views.availabilitiesList, name='availavilities-all'),
+	path('availability/create/',views.availabilityCreate, name='availability-create'),
+	path('availability/delete/<str:pk>/',views.availabilityDelete, name='availability-delete'),
+	path('availability/update/<str:pk>/',views.availabilityUpdate, name='availability-update'),
+
 ]

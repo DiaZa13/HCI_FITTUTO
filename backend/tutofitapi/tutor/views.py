@@ -2,9 +2,9 @@ from django.shortcuts import render
 from .serializers import TutorSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Tutor
+from .models import Tutor , Availability
 from django.db import connection
-from .serializers import TutorSerializer
+from .serializers import TutorSerializer , AvailabilitySerializer
 
 # Create your views here.
 
@@ -77,3 +77,39 @@ def tutorDelete(request,pk):
 	tutor= Tutor.objects.get(id_tutor=pk)
 	tutor.delete()
 	return Response("Tutor was deleted")
+
+
+
+
+
+@api_view(['GET'])
+def availabilitiesList(request):
+	availbilities= Availability.objects.all()
+	serializers= AvailabilitySerializer(availbilities,many=True)
+	return Response(serializers.data)
+
+
+
+
+@api_view(['POST'])
+def availabilityCreate(request):
+	serializer = AvailabilitySerializer(data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
+
+@api_view(['POST'])
+def availabilityUpdate(request,pk):
+	availability= Availability.objects.get(id_availability=pk)
+	serializer = AvailabilitySerializer(instance=availability, data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
+
+@api_view(['DELETE'])
+def availabilityDelete(request,pk):
+	availability= Availability.objects.get(id_availability=pk)
+	availability.delete()
+	return Response("Availability was deleted")
