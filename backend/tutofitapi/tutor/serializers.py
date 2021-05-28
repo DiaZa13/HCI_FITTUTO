@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Tutor , Availability
+from .models import Tutor , Availability , Hour
 
 
 class TutorSerializer(serializers.ModelSerializer):
@@ -12,5 +12,12 @@ class TutorSerializer(serializers.ModelSerializer):
 class AvailabilitySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Availability
+		fields = "__all__"
+
+
+
+class HourSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Hour
 		fields = "__all__"
 

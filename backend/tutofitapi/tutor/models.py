@@ -23,6 +23,9 @@ class Availability(models.Model):
 
 		
 
-
+class Hour(models.Model):
+	id_hour = models.AutoField(primary_key=True)
+	start_time = models.TimeField(default='00:00:00')
+	end_time = models.TimeField(default='01:00:00')
 
 

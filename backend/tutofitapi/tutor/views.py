@@ -2,9 +2,9 @@ from django.shortcuts import render
 from .serializers import TutorSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Tutor , Availability
+from .models import Tutor , Availability , Hour
 from django.db import connection
-from .serializers import TutorSerializer , AvailabilitySerializer
+from .serializers import TutorSerializer , AvailabilitySerializer , HourSerializer
 
 # Create your views here.
 
@@ -80,13 +80,28 @@ def tutorDelete(request,pk):
 
 
 
-
+###Availabilities
 
 @api_view(['GET'])
 def availabilitiesList(request):
 	availbilities= Availability.objects.all()
 	serializers= AvailabilitySerializer(availbilities,many=True)
 	return Response(serializers.data)
+
+
+@api_view(['GET'])
+def availabilitiesByTutorId(request,pk):
+	querry='select * from (	select date,c.start_time,c.end_time from tutor_availability ta 	join calendar c  	on ta.day_of_week = c.day_of_week  	where id_tutor_id = '+pk+ ' and c.start_time >= ta.start_time and c.end_time <= ta.end_time ) available except (	select date, start_time, end_time from appointment_appointment aa where id_tutor_id = '+pk+') order by date, start_time'
+	cursor = connection.cursor()
+	cursor.execute(querry)
+	availabilities = cursor.fetchall()
+	valores = []
+	for availability in availabilities:
+		element_dict = {"date": availability[0] , "start_time" :availability[1],"end_time":availability[2]}
+		valores.append(element_dict)
+
+	return Response (valores)
+
 
 
 
@@ -113,3 +128,41 @@ def availabilityDelete(request,pk):
 	availability= Availability.objects.get(id_availability=pk)
 	availability.delete()
 	return Response("Availability was deleted")
+
+
+
+####  Hours
+
+
+
+@api_view(['GET'])
+def hoursList(request):
+	hours= Hour.objects.all()
+	serializers= HourSerializer(hours,many=True)
+	return Response(serializers.data)
+
+
+
+
+@api_view(['POST'])
+def hourCreate(request):
+	serializer = HourSerializer(data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
+
+@api_view(['POST'])
+def hourUpdate(request,pk):
+	hour= Hour.objects.get(id_hour=pk)
+	serializer = HourSerializer(instance=hour, data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
+
+@api_view(['DELETE'])
+def hourDelete(request,pk):
+	hour= Hour.objects.get(id_hour=pk)
+	hour.delete()
+	return Response("Hour was deleted")
