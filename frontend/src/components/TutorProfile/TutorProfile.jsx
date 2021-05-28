@@ -22,7 +22,7 @@ export default function tutorProfile() {
           <button className="btn-reseña" ><img src={img2} alt="reseña-img" className="reseña-img"/></button>
         </div>
         <div className="d-flex my-1">
-              <h6>Calificación:</h6>
+              <h5>Calificación:</h5>
               <span className="material-icons text-secondary tutor-review">star_rate</span>
               <span className="material-icons text-secondary tutor-review">star_rate</span>
               <span className="material-icons text-secondary tutor-review">star_rate</span>
