@@ -1,14 +1,12 @@
 import React from 'react';
 import LogInFormContainer from './LogInFormContainer';
-import img from '../../assets/tutor3.png';
+import img from '../../assets/background.png';
 
 export default function LogIn() {
   return (
-    <div className="signUp-container">
+    <div>
       <LogInFormContainer />
-      <div className="signUp-img">
-        <img src={img} className={'d-none d-md-block vh-100 w-100'} alt="LOGO"/>
-      </div>
+      <img src={img} className={'d-none d-md-block w-100 logIn-img'} alt="LOGO"/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import SignUpForm from './signUpForm';
 import history from '../utils/history';
-import logo from '../../assets/logo.svg';
+import { Link } from 'react-router-dom';
 
 function SignUpFormcontainer() {
   // const handleClick = () =>{
@@ -67,7 +67,7 @@ function SignUpFormcontainer() {
         <span className="me-2">
           ¿Ya tienes cuenta?
         </span>
-        <button className="w-75% signIn">Iniciar Sesión</button>
+        <Link className="w-75% signIn" to={'/'}>Iniciar Sesión</Link>
       </p>
     </div>
   );

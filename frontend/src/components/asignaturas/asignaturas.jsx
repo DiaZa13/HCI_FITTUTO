@@ -1,5 +1,5 @@
 import React from 'react';
-import TutorshipItem from './tutorshipItem';
+import TutorshipItem from '../home/tutorshipItem';
 import { tutorship_data } from '../utils/tutorship_data';
 
 export default function Asignaturas() {
@@ -7,8 +7,8 @@ export default function Asignaturas() {
   return (
     <div>
       <div className="w-100 text-center mt-5">
-        <h1 className="text-secondary">APRENDE CUALQUIER ASIGNATURA</h1>
-        <p>Variedad de asignaturas académicas para reforzar de la mano de un experto</p>
+        <h1 className="text-secondary">AHORA, APRENDER ES FÁCIL</h1>
+        <p>Con nuestros expertos en diversas áreas, adquiere conocimiento en la asignatura que desees</p>
       </div>
       <div className="tutorship-container ">
         {
