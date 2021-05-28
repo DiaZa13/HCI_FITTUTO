@@ -1,0 +1,88 @@
+.carousel-container{
+  height: 600px;
+  margin: 0 auto;
+  max-width: 1392px;
+  background: #F5F6F4;
+  overflow: hidden;
+}
+
+.tutorship-container{
+  display: grid;
+  --minimumColumnWidth: 180px;
+  overflow-y: hidden;
+  padding: 0 15px;
+  grid-gap: 30px;
+  grid-template-columns: [first] 1fr [middle] 1fr [middle_1] 1fr [end];
+  grid-template-rows: auto;
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.left-tutorship{
+  border-top-left-radius: 50%;
+}
+
+.right-tutorship{
+  border-top-right-radius: 50%;
+}
+
+.tutorship-link{
+  font-size: 12px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid;
+  letter-spacing: 0.2em;
+  padding-bottom: 4px;
+  &:hover{
+    text-decoration: none;
+    color: $amber-7;
+    font-weight: 600;
+  }
+
+}
+
+.card-dimensions{
+  width: 100%;
+  height: calc(100%/1.618 * 1px);
+}
+
+.card{
+  transition-duration: 400ms;
+  transition-property: box-shadow, transform;
+  &.left-tutorship{
+    border-top-left-radius: 50%;
+  }
+  &.right-tutorship{
+    border-top-right-radius: 50%;
+  }
+  &:hover{
+    box-shadow: 0 2px 7px $blue-gray-7;
+    transform: scale(1.01);
+
+  }
+}
+
+.quote{
+  height: 16rem;
+}
+
+.tutor-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutor-img{
+  max-width: 50%;
+  max-height: 100%;
+}
+
+.tutor-text{
+  font-size: 18px;
+  width: 70%;
+  min-height: 250px;
+  margin-left: -40px;
+  padding: 40px 80px 40px 40px;
+  background-color: #f4eeed;
+}
+

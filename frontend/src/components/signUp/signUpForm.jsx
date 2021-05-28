@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import {MdRemoveRedEye as I_visibility} from 'react-icons/md';
+import {BsFillEyeFill as I_visibility,
+  BsPersonFill as I_person,
+  BsFillEnvelopeFill as I_email} from 'react-icons/bs';
 
 const schema = z.object({
   name: z.string().nonempty({message:'Ingrese su nombre completo'}),
-  email: z.string().nonempty({ message: 'Ingresa un usuario' }).email({ message: 'Ingresa un correo válido' }),
+  email: z.string().nonempty({ message: 'Ingresa su correo electrónico' }).email({ message: 'Ingresa un correo válido' }),
   username: z.string().nonempty({ message: 'Ingresa un usuario' }),
   password: z.string().nonempty({ message: 'Ingresa una contraseña' }).min(8, { message: 'Mínimo 8 caracteres' }),
 });
@@ -17,14 +19,15 @@ function SignUpForm() {
     resolver: zodResolver(schema),
 
   });
-  const [registerData, setRegisterdata] = useState({
+  const [data, setData] = useState({
     name: '',
     email: '',
     username: '',
     password: '',
   });
 
-  const [registerFilled, setRegisterfilled] = useState({
+  const [filled, setFilled] = useState({
+    name: false,
     email: false,
     username: false,
     password: false,
@@ -33,19 +36,19 @@ function SignUpForm() {
   const handleInputChange = (e) => {
     console.log(e.target.value);
     console.log('wtf');
-    setRegisterdata({
-      ...registerData,
+    setData({
+      ...data,
       [e.target.name]: e.target.value,
     });
 
     if (e.target.value !== '') {
-      setRegisterfilled({
-        ...registerFilled,
+      setFilled({
+        ...filled,
         [e.target.name]: true,
       });
     } else {
-      setRegisterfilled({
-        ...registerFilled,
+      setFilled({
+        ...filled,
         [e.target.name]: false,
       });
     }
@@ -54,75 +57,81 @@ function SignUpForm() {
   const onSubmit = (data) => console.log(data);
 
   return (
-      <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
+      <form onSubmit={handleSubmit(onSubmit)} className="form-container mt-4">
         {/* Full name */}
         <div className="position-relative mt-2">
           <input
-            className="input"
+            className={'input ' + (filled.name? 'is-filled':'')}
             type="text"
             name="name"
-            placeholder="Nombre completo"
             onInput={handleInputChange}
             {...register('name')}
           />
-          <button className="input-icon">
-            <I_visibility/>
+          <label className={'label'}>Nombre completo</label>
+          <button className={`input-icon ${filled.name? 'is-filled':''}`}>
+            <I_person/>
           </button>
           <small className="text-danger text-small d-block mb-2">
             {/* <Exclamation_icon/> */}
-            {errors.email?.message}
+            {errors.name?.message}
           </small>
         </div>
-        {/* Email */}
-        <div className="position-relative mt-4">
+        {/* Username */}
+        <div className="position-relative mt-4_5">
           <input
-            className="input"
+            className={`input ${filled.username? 'is-filled' : ' '}`}
             type="text"
-            name="email"
-            placeholder="Correo electrónico"
+            name="username"
             onInput={handleInputChange}
-            {...register('email')}
+            {...register('username')}
           />
+          <label className={'label'}>Usuario</label>
           <button className="input-icon">
            <I_visibility/>
           </button>
           <small className="text-danger text-small d-block mb-2">
             {/* <Exclamation_icon/> */}
+            {errors.usuario?.message}
+          </small>
+        </div>
+        {/* Email */}
+        <div className="position-relative mt-4_5">
+          <input
+            className={`input ${filled.email? 'is-filled' : ' '}`}
+            type="text"
+            name="email"
+            onInput={handleInputChange}
+            {...register('email')}
+          />
+          <label className={'label'}>Correo electrónico</label>
+          <button className="input-icon">
+            <I_email/>
+          </button>
+          <small className="text-danger text-small d-block mb-2">
+            {/* <Exclamation_icon/> */}
             {errors.email?.message}
           </small>
         </div>
-        {/* Username */}
-        <div className="position-relative mt-4">
-          <input
-            className={`input ${registerFilled.username ? 'is-filled' : ' '}`}
-            type="text"
-            name="username"
-            placeholder="Usuario"
-            onInput={handleInputChange}
-            {...register('username')}
-          />
-          <small className="text-danger text-small d-block mb-2">
-            {/* <Exclamation_icon/> */}
-            {errors.username?.message}
-          </small>
-        </div>
         {/* Password */}
-        <div className="position-relative mt-4">
+        <div className="position-relative mt-4_5 mb-3">
           <input
-            className={`input ${registerFilled.username ? 'is-filled' : ' '}`}
-            type="text"
+            className={`input ${filled.password? 'is-filled' : ' '}`}
+            type="password"
             name="password"
-            placeholder="Contraseña"
             onInput={handleInputChange}
             {...register('password')}
           />
+          <label className={'label'}>Contraseña</label>
+          <button className="input-icon">
+            <I_visibility/>
+          </button>
           <small className="text-danger text-small d-block mb-2">
             {/* <Exclamation_icon/> */}
             {errors.password?.message}
           </small>
         </div>
         {/* REGISTER BUTTON */}
-        <button onSubmit={onSubmit} className="btn btn-meeting btn-fill my-3 w-100">REGISTRARTE</button>
+        <button onSubmit={onSubmit} className="btn btn-secondary mt-4_5 w-100 font">CREAR CUENTA</button>
       </form>
   );
 }

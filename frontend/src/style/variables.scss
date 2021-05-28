@@ -12,13 +12,28 @@ $amber-4: #FFCA28;
 $amber-5: #FFC107;
 $amber-6: #FFB300;
 $amber-7: #FFA000;
-$indigo-1: #8C9EFF;
-$indigo-2: #536DFE;
-$indigo-3: #3D5aFE;
+$indigo-1: #CADDFF;
+$indigo-2: #99B9FF;
+$indigo-3: #5979F7;
 $indigo-4: #304FFE;
 
 
 $theme-colors: (
-        "primary": #423f3f,
-        "secondary": #f8f8f8,
+        "primary": #263238,
+        "secondary": #FFB300,
+        "tertiary": #304FFE,
+        "amber-7":#FFA000,
+        "indigo-1": #CADDFF,
+        "blue-gray-8": #37474F,
+        "white": #fff,
+        "light": #ebebeb,
+        "danger": #D50000,
 );
+
+/* Modals */
+$modal-header-padding: 8px;
+$modal-content-border-radius: 0px;
+$modal-content-border-width: 0px;
+$modal-content-bg: #ffffff;
+$modal-footer-border-width: 2px;
+$modal-sm: 400px;
