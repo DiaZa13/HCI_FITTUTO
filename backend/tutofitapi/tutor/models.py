@@ -8,6 +8,8 @@ class Tutor(models.Model):
 	last_name = models.CharField(max_length=50)
 	date_of_birth = models.DateField(auto_now_add=True)
 	phone_number = models.IntegerField(default=12341234)
+	rate_per_hour = models.IntegerField(default=50)
+	
 
 
 

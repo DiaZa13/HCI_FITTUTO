@@ -2,6 +2,7 @@ from django.db import models
 from appointment.models import Appointment
 
 
+
 class Score(models.Model):
 	id_score = models.AutoField(primary_key=True)
 	id_appointment = models.ForeignKey(Appointment, on_delete=models.PROTECT, related_name="scores")

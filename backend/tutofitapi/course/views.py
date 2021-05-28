@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db import connection
 from .serializers import CourseSerializer
 
 from rest_framework.response import Response
@@ -8,10 +9,13 @@ from .models import Course
 # Create your views here.
 
 
+
+
 @api_view(['GET'])
 def coursesList(request):
 	courses= Course.objects.all()
 	serializers= CourseSerializer(courses,many=True)
+	print(serializers.data)
 	return Response(serializers.data)
 
 @api_view(['GET'])
