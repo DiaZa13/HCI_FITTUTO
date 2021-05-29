@@ -72,7 +72,8 @@ def userRegister(request):
 	last_name = request.data['last_name']
 	phone_number =request.data['phone_number']
 	birth_date = request.data['birth_date']
-	new_user=User.objects.create_user(username=username, password=password,first_name=name,last_name=last_name)
+	email = request.data['email']
+	new_user=User.objects.create_user(username=username, password=password,first_name=name,last_name=last_name,email=email)
 	MyUser.objects.create(user=new_user,birth_date=birth_date,phonenumber=phone_number)
 
 

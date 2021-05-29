@@ -28,9 +28,15 @@ def coursesByTutorId(request,pk):
 	querry='select name from course_course cc join course_teaches ct on ct.id_course_id = cc.id_course where id_tutor_id ='+pk
 	cursor = connection.cursor()
 	cursor.execute(querry)
-	course = cursor.fetchall()
-	element_dict = {"course": course[0][0]}
-	return Response(element_dict)
+	courses = cursor.fetchall()
+	
+	valores = []
+	for course in courses:
+		element_dict = {"course": course[0]}
+		valores.append(element_dict)
+
+
+	return Response(valores)
 
 @api_view(['POST'])
 def courseCreate(request):
