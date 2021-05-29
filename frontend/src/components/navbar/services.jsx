@@ -29,9 +29,9 @@ export default function Services() {
         </li>
         <li className={"nav-item product-font ml-20"}>
           <Link
-            to={`${url}/session`}
+            to={`${url}/context`}
             className="services"
-            name="asignatura"
+            name="context"
             type="button">
             Sesiones
           </Link>
@@ -39,7 +39,7 @@ export default function Services() {
         <li className={"nav-item product-font ml-20"}>
           <Link
             to={`${url}/Exercises`}
-            className="Exercises"
+            className="services"
             type="button">
             Ejercicios
           </Link>
@@ -47,7 +47,7 @@ export default function Services() {
         <li className={"nav-item product-font ml-20"}>
           <Link
             to={`${url}/TutorProfile`}
-            className="TutorProfile"
+            className="services"
             type="button">
             Perfil Tutor
           </Link>

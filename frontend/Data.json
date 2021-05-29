@@ -1,0 +1,62 @@
+{
+    "active": [
+        {
+            "tutor": {
+                "nombre": "Mauricio Pok" 
+            },
+            "fecha": "25/05/21",
+            "costo": 100.00,
+            "deposit": {
+                "horas": 1
+            },
+            "status": {
+                "message": "Activo",
+                "level": 3 
+            }
+        },
+        {
+            "tutor": {
+                "nombre": "Flores del Campo"
+            },
+            "fecha": "12/5/2021",
+            "costo": 200.00,
+            "deposit": {
+                "horas": 2
+            },
+            "status": {
+                "message": "Activo",
+                "level": 3 
+            }
+        }
+    ],
+    "closed": [
+        {
+            "tutor": {
+                "nombre": "El Bicho Siuu"
+            },
+            "fecha": "28/05/21",
+            "costo": 300.00,
+            "deposit": {
+                "horas": 2
+            },
+            "status": {
+                "message": "Cerrado",
+                "level": 1
+            }
+        },
+        {
+            "tutor": {
+                "nombre": "Carmen Hernandez"
+            },
+            "fecha": "27/05/21",
+            "costo": 150.00,
+            "deposit": {
+                "horas": 1
+            },
+            "status": {
+                "message": "Cerrado",
+                "level": 1 
+            }
+        }
+    ]
+}

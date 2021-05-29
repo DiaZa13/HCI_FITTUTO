@@ -57,8 +57,8 @@ export default function App() {
 		}
 	};
 	return (
-		<div className="app-container">
-			<div className='app'>
+		<div className="app-container1">
+			<div className='app_exercise'>
 				{showScore ? (
 					<div className='score-section'>
 						You scored {score} out of {questions.length}
@@ -74,8 +74,9 @@ export default function App() {
 						</div>
 						<div className='answer-section'>
 							{questions[currentQuestion].answerOptions.map((answerOption) => (
-								<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+								<button className="chupapi" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 							))}
+							
 						</div>
 					</>
 				)}

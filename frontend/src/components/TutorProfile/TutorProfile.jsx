@@ -3,8 +3,10 @@ import img from '../../assets/teachers (2).png';
 import img2 from '../../assets/reseña.jpg';
 import './TutorProfile.scss';
 import ModalAgendar from '../tutor/modal_agendar';
+import { Link, useRouteMatch, useParams } from 'react-router-dom';
 
 export default function tutorProfile() {
+  const { url } = useRouteMatch();
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <div className="genereal">
@@ -15,12 +17,9 @@ export default function tutorProfile() {
           <h2>Juanito Gonzales</h2>
           <button className="btn-calendario" onClick={() => setModalShow(true)}>
             <span className="material-icons text-primary" style={{fontSize:"30px"}}>event_available</span></button>
-            <ModalAgendar
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
           <button className="btn-reseña" >
-          <span className="material-icons create" style={{fontSize:"30px", color:"#263238"}}>create</span></button>
+          <Link to={`${url}/references`}> <span className="material-icons create" style={{fontSize:"30px", color:"#263238"}}>create</span></Link>
+          </button>
         </div>
         <div className="d-flex my-1">
               <h5>Calificación:</h5>
@@ -39,7 +38,6 @@ export default function tutorProfile() {
         </p>
       </div>   
     </div>
-    <h1>Reseñas de Juanito Gonzales</h1>
     </div>
   );
 }

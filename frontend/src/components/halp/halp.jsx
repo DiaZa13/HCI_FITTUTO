@@ -15,11 +15,11 @@ export default function Home() {
             <img className="" src={step1} alt="Inicio" height="400" />
           </div>
           <div className="col">
-            <h1>
+            <h1  className="titulo">
               Busca un tutor
             </h1>
-            <h2>
-              Descripción
+            <h2 className="letra">
+            "Ve al apartado de "buscar tutor", ingresa el curso en el cual deseas encontrar un tutor"
             </h2>
           </div>
         </div>
@@ -30,11 +30,14 @@ export default function Home() {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1>
+            <h1 className="titulo">
               Escoge al tutor para tu hijo
             </h1>
-            <h2>
-              Descripción
+            <h2 className="letra">
+             Con la ayuda de un tutor particular el estudiante puede desarrollar técnicas de estudio de una 
+             manera proactiva y eficaz para preparación de exámenes, preparación preuniversitaria y para 
+             mejorar su nivel académico en general. De primero se hace una busqueda,Luego de hacer la búsqueda,
+            escoge el tutor que más se acomode a las necesidades educativas de tu hijo
             </h2>
           </div>
           <div className="col">
@@ -51,11 +54,11 @@ export default function Home() {
             <img className="" src={step3} alt="Inicio" height="400" />
           </div>
           <div className="col">
-            <h1>
+            <h1 className="titulo">
               Haz una cita
             </h1>
-            <h2>
-              Descripción
+            <h2 className="letra">
+            "Luego de que hayas escogido a un tutor, selecciona "agendar cita" y busca una fecha en la cual se acomode a tu horario
             </h2>
           </div>
         </div>

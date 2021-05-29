@@ -2,8 +2,22 @@ import React from 'react';
 import img from '../../assets/teachers (2).png'
 import ModalAgendar from './modal_agendar';
 
-export default function TutorItem() {
+export default function TutorItem(props) {
   const [modalShow, setModalShow] = React.useState(false);
+
+  const stars = [];
+  let count = 0;
+  let total_stars = 0
+
+  while(total_stars < 5){
+    if (count < props.score){
+      stars.push(<span className="material-icons text-secondary tutor-review" key={count}>star_rate</span>)
+      count +=1;
+    }else{
+      stars.push(<span className="material-icons text-secondary tutor-review">star_outline</span>)
+    }
+    total_stars += 1;
+  }
 
   return (
     <div className="tutor-item-container m-5" style={{width: "400px"}}>
@@ -16,14 +30,10 @@ export default function TutorItem() {
       <div id="tutor_description" className="mt-2 pl-2">
         <div className="d-flex justify-content-between">
           <div className="ms-2">
-            <h4 className="mb-1">JUANITO GONZALES</h4>
-            <small className="mb2">Q200 por hora</small>
+            <h4 className="mb-1">{props.name}</h4>
+            <small className="mb2">Q{props.costo} por hora</small>
             <div className="d-flex my-1">
-              <span className="material-icons text-secondary tutor-review">star_rate</span>
-              <span className="material-icons text-secondary tutor-review">star_rate</span>
-              <span className="material-icons text-secondary tutor-review">star_rate</span>
-              <span className="material-icons text-secondary tutor-review">star_rate</span>
-              <span className="material-icons text-secondary tutor-review">star_outline</span>
+              {stars}
             </div>
           </div>
           <button className="button" onClick={() => setModalShow(true)}>
@@ -32,6 +42,11 @@ export default function TutorItem() {
           <ModalAgendar
             show={modalShow}
             onHide={() => setModalShow(false)}
+            cursos={props.cursos}
+            fechas={props.fechas}
+            name={props.name}
+            tutor_set={(fecha) => props.tutor_set(fecha)}
+            appointment_set={(curso, fecha, tutor) => props.appointment_set(curso, fecha, tutor)}
           />
         </div>
       </div>

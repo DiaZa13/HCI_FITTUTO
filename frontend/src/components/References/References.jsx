@@ -51,7 +51,9 @@ class App extends Component {
   handleChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
-    let formErrors = { ...this.state.formErrors };
+    console.log(this.state.FullName + ' ' + this.state.Curso + ' ' + this.state.Commentary)
+    let formErrors = { ...this.state.formErrors 
+    };
 
     switch (name) {
       case "FullName":
@@ -88,6 +90,7 @@ class App extends Component {
     setCurrentValue(value)
   }
 */
+
   render() {
     const { formErrors } = this.state;
 
@@ -95,9 +98,9 @@ class App extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Tu opinion es importante</h1>
-          <form onSubmit={this.handleSubmit} noValidate>
+          <form className="Holas"onSubmit={this.handleSubmit} onSubmit={this.enviarDatos} noValidate>
             <div className="email">
-              <label htmlFor="FullName">Ingrese Nombre Completo</label>
+              <label htmlFor="FullName">Ingrese Su Nombre Completo</label>
               <input
                 className={formErrors.fullName.length > 0 ? "error" : null}
                 placeholder="Nombre Completo"
